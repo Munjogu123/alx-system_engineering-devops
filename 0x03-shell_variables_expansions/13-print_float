@@ -1,2 +1,2 @@
 #!/bin/bash
-echo 3.4567 | cut -b 1-4
+echo $NUM | cut -b 1-4
