@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Displays the content of the file /etc/passwd, using the while loop + IFS
+
+file="/etc/passwd"
+while IFS= read -r line; do
+    user=$(echo "$line" | cut -d ':' -f 1)
+    gid=$(echo "$line" | cut -d ':' -f 4)
+    directory=$(echo "$line" | cut -d ':' -f 6)
+    command=$(echo "$line" | cut -d ':' -f 7)
+    uid=$(echo "$line" | cut -d ':' -f 3)
+    password=$(echo "$line" | cut -d ':' -f 2)
+    gecos=$(echo "$line" | cut -d ':' -f 5)
+
+    echo "The user $user is part of the $gid gang, lives in $directory and rides $command. $uid's place is protected by the passcode $password, more info about the user here: $gecos"
+
+done < "$file"
