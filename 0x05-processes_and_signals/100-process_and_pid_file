@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# displays text when different signals are passed
+
+file="/var/run/myscript.pid"
+
+if [ ! -e "$file" ]; then
+    touch "$file"
+fi
+
+echo "$!" > "$file"
+trap 'echo "I hate the kill command"; rm "$file"; exit' 15 3
+trap 'echo "Y U no love me?!"' 2
+
+while ((1)); do
+    echo "To infinity and beyond"
+    sleep 2
+done
