@@ -48,5 +48,4 @@ frontend munjogu_frontend-https
 backend munjogu_backend
         balance roundrobin
         server 531535-web-01    54.237.4.65:80 check
-        server 531535-web-02    18.233.64.247:80 check
-                                                         
+        server 531535-web-02    18.233.64.247:80 check    
