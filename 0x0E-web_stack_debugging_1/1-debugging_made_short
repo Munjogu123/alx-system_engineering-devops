@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # changes listening port
-ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
 kill -9 "$(cat /var/run/nginx.pid)"
